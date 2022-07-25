@@ -30,9 +30,6 @@ jobs:
       run: pnpm install
     - name: Update pnpm bundle
       run: curl -L --fail https://get.pnpm.io/v5.js > static/pnpm.js
-    - uses: webfactory/ssh-agent@v0.5.4
-      with:
-        ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
     - name: Release to GitHub Pages
       env:
         USE_SSH: true
